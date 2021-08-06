@@ -500,26 +500,17 @@ aria-haspopup="true" aria-expanded="false">
   <li class="breadcrumb-item active" aria-current="page">Beranda</li>
 </ol>
   </div>
-  
-<script type="text/javascript">
-// 1 detik = 1000
-window.setTimeout("waktu()",1000);  
-function waktu() {   
-var tanggal = new Date();  
-setTimeout("waktu()",1000);  
-document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMinutes()+":"+tanggal.getSeconds();
-}
-</script>
+
 <div class="row mb-3">
 <!-- Earnings (Monthly) Card Example -->
 <div class="col-xl-3 col-md-6 mb-4">
   <div class="card h-100">
-<div class="card-body">
+<div class="card-body bg-dark">
   <div class="row align-items-center">
 <div class="col mr-2">
-  <div class="text-xs font-weight-bold text-uppercase mb-1">Waktu</div>
+  <div class="text-xs font-weight-bold text-uppercase mb-1">Info Owner </div>
   <br>
-  <div id='jam'></div>
+  <div class="h5 mb-0 font-weight-bold text-light-800">Yogga</div>
   <div class="mt-2 mb-0 text-muted text-xs">
 <span class="text-success mr-2">Orang Ganteng</span>
   </div>
@@ -531,8 +522,31 @@ document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMin
 </div>
   </div>
 </div>
-   
-<!-- Hans Bot -->
+<script type="text/javascript">
+// 1 detik = 1000
+window.setTimeout("waktu()",1000);  
+function waktu() {   
+var tanggal = new Date();  
+setTimeout("waktu()",1000);  
+document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMinutes()+":"+tanggal.getSeconds();
+}
+</script>
+<div class="col-xl-3 col-md-6 mb-4">
+  <div class="card h-100">
+  <div class="card-body">
+  <div class="row align-items-center">
+  <div class="col mr-2">
+  <div class="text-xs font-weight-bold text-uppercase mb-1">Waktu</div>
+ <div class="h5 mb-0 font-weight-bold text-gray-800"><b><i class="fas fa-clock"></i><div id='jam' ></div></b></div>
+  <div class="mt-2 mb-0 text-muted text-xs">
+  </div>
+  </div>
+  <div class="col-auto">
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
 <div class="col-xl-3 col-md-6 mb-4">
   <div class="card h-100">
   <div class="card-body">

@@ -520,8 +520,9 @@ document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMin
 <div class="col mr-2">
   <div class="text-xs font-weight-bold text-uppercase mb-1">Waktu</div>
   <br>
-  <div class="h5 mb-0 font-weight-bold text-light-1000 div id='jam' "></div>
+  <div class="h5 mb-0 font-weight-bold text-light-800"><div id='jam' ></div>
   <div class="mt-2 mb-0 text-muted text-xs">
+<span class="text-success mr-2">Orang Ganteng</span>
   </div>
 </div>
 <div class="col-auto">
@@ -533,18 +534,64 @@ document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMin
 </div>
    
 <!-- Hans Bot -->
-<div class="batteryContainer">
-  <div class="batteryOuter"><div id="batteryLevel"></div></div>
-  <div class="batteryBump"></div>
-</div>
+<script> 
 
+			var batteryLevel = document.getElementById("batteryLevel");
+
+			var styleBatteryLevel = batteryLevel.style;
+
+			var percentageLevel = document.getElementById("percentageLevel");
+
+			navigator.getBattery().then(function(battery) {
+
+				
+
+			function updateAllBatteryInfo(){
+
+			updateLevelInfo();
+
+			}
+
+			updateAllBatteryInfo();
+
+			battery.addEventListener('levelchange',      function(){
+
+			setInterval(function(){
+
+			updateLevelInfo()
+
+			},1000);
+
+			});
+
+			
+
+			function updateLevelInfo(){
+
+			var numBattery = battery.level * 100;
+
+			percentageLevel.textContent=Math.round(numBattery) + "%";
+
+			styleBatteryLevel.height=numBattery + "%";
+
+			if(numBattery<=15) {
+
+			styleBatteryLevel.background="red";
+
+			}
+
+			};
+
+			});
+
+			</script>
 <div class="col-xl-3 col-md-6 mb-4">
   <div class="card h-100">
   <div class="card-body">
   <div class="row align-items-center">
   <div class="col mr-2">
   <div class="text-xs font-weight-bold text-uppercase mb-1">Info</div>
-  <div class="h5 mb-0 font-weight-bold text-gray-800">My +21 birthday</div>
+  <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="percentageLevel"></span></div>
   <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 
   <b id="time">281Hari 6744Jam 404640Menit 24278400Detik </b><br></span>
   <div class="mt-2 mb-0 text-muted text-xs">

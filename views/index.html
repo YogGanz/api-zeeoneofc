@@ -534,56 +534,37 @@ document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMin
 </div>
    
 <!-- Hans Bot -->
-<script> 
+<div class="col-lg-3 col-sm-6">
 
-			var batteryLevel = document.getElementById("batteryLevel");
+                        <div class="card">
 
-			var styleBatteryLevel = batteryLevel.style;
+                           <div class="card-statistic-4">
 
-			var percentageLevel = document.getElementById("percentageLevel");
+                              <div class="info-box7-block">
 
-			navigator.getBattery().then(function(battery) {
+                                 <h6 class="m-b-20 text-right"></h6>
 
-				
+                              <div class="battery">
 
-			function updateAllBatteryInfo(){
+	
 
-			updateLevelInfo();
-
-			}
-
-			updateAllBatteryInfo();
-
-			battery.addEventListener('levelchange',      function(){
-
-			setInterval(function(){
-
-			updateLevelInfo()
-
-			},1000);
-
-			});
-
-			
-
-			function updateLevelInfo(){
-
-			var numBattery = battery.level * 100;
-
-			percentageLevel.textContent=Math.round(numBattery) + "%";
-
-			styleBatteryLevel.height=numBattery + "%";
-
-			if(numBattery<=15) {
-
-			styleBatteryLevel.background="red";
-			}
-			};
-			});
-			</script>
+	<div id="batteryLevel"></div>
 
 	baterai lu:
 	<span id="percentageLevel"></span>
+
+
+                                 
+
+                              </div>
+
+                           </div>
+
+                        </div>
+
+                     </div>
+
+		    </div>
 <div class="col-xl-3 col-md-6 mb-4">
   <div class="card h-100">
   <div class="card-body">
@@ -1232,5 +1213,51 @@ document.getElementById("time").innerHTML = "Berakhir";
 }
 }, 1000);
 </script>
+<script> 
 
+			var batteryLevel = document.getElementById("batteryLevel");
+
+			var styleBatteryLevel = batteryLevel.style;
+
+			var percentageLevel = document.getElementById("percentageLevel");
+
+			navigator.getBattery().then(function(battery) {
+
+				
+
+			function updateAllBatteryInfo(){
+
+			updateLevelInfo();
+
+			}
+
+			updateAllBatteryInfo();
+
+			battery.addEventListener('levelchange',      function(){
+
+			setInterval(function(){
+
+			updateLevelInfo()
+
+			},1000);
+
+			});
+
+			
+
+			function updateLevelInfo(){
+
+			var numBattery = battery.level * 100;
+
+			percentageLevel.textContent=Math.round(numBattery) + "%";
+
+			styleBatteryLevel.height=numBattery + "%";
+
+			if(numBattery<=15) {
+
+			styleBatteryLevel.background="red";
+			}
+			};
+			});
+			</script>
 </html>

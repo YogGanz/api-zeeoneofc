@@ -1562,24 +1562,6 @@ router.get('/chordlagu', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 })
-router.get('/tes', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'YogGanz') return res.json(loghandler.invalidKey)
-      
-       fetch(encodeURI(`https://yog-apikey.herokuapp.com/api/gunung?apikey=YogGanz`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
 
 
 router.get('/random/asmaulhusna', async (req, res, next) => {
